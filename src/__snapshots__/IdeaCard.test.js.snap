@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IdeaCard Card Component IdeaCard Card Snapshots should render correctly based on required properties  1`] = `
+<section
+  className=""
+  id={1}
+>
+  <h3>
+    Dogs should vote
+  </h3>
+  <p>
+    Give them rights
+  </p>
+  <div>
+    <button
+      className="favorite-btn"
+    >
+      Favorite
+    </button>
+    <button
+      className="delete-btn"
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+  </div>
+</section>
+`;

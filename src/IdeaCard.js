@@ -2,7 +2,7 @@ import React from 'react';
 
 const IdeaCard = ({id, title, description, deleteCard, isFavorite}) => {
   let favoriteClass;
-  isFavorite ? favoriteClass = 'favorited' : '';
+  isFavorite ? favoriteClass = 'favorited' : favoriteClass = '';
 
   return (
     <section id={id} className={favoriteClass}>

@@ -8,17 +8,18 @@ describe('IdeaCard Card Component', () => {
     expect(idea).toBeDefined();
   });
 
-  // describe('IdeaCard Card Snapshots', () => {
-  //   it('should match previous snapshot', () => {
-  //     const idea = shallow(<IdeaCard
-  //         id={1}
-  //         title="Dogs should vote"
-  //         description="Give them rights"
-  //         deleteCard={deleteCardMock}
-  //       />);
-  //
-  //   });
-  // });
+   describe('IdeaCard Card Snapshots', () => {
+     it('should render correctly based on required properties ', () => {
+       const deleteCardMock = jest.fn();
+       const idea = shallow(<IdeaCard
+           id={1}
+           title="Dogs should vote"
+           description="Give them rights"
+           deleteCard={deleteCardMock}
+         />);
+       expect(idea).toMatchSnapshot();
+     });
+   });
 
   it('should render with a title', () => {
     const idea = shallow(<IdeaCard id={1} title="Dogs should vote" description="Give them rights" />)
