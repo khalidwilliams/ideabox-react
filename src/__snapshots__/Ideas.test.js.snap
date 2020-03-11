@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ideas Component Rendering tests will match the old snapshot 1`] = `
+<main>
+  <Component />
+  <Component />
+</main>
+`;

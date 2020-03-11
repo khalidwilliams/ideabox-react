@@ -52,7 +52,27 @@ describe('Ideas Component', () => {
 
       expect(shallowIdeas).toBeDefined();
     });
-    it.skip('will match the old snapshot', () =>{
+    it('will match the old snapshot', () =>{
+      const deleteCardMock = jest.fn();
+      let ideas = [
+        {
+          title:"Thought",
+          id:1,
+          description:"A Thought",
+          deleteCard:deleteCardMock
+        },
+        {
+          title:"Idea",
+          id:2,
+          description:"An Idea...",
+          deleteCard:deleteCardMock
+        }
+      ];
+
+      let shallowIdeas = shallow(<Ideas 
+        ideas={ideas}  
+      />); 
+      expect(shallowIdeas).toMatchSnapshot();
     });
   });
   
