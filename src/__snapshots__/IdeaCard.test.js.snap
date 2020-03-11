@@ -14,6 +14,7 @@ exports[`IdeaCard Card Component IdeaCard Card Snapshots should render correctly
   <div>
     <button
       className="favorite-btn"
+      onClick={[Function]}
     >
       Favorite
     </button>

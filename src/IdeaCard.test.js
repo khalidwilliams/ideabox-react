@@ -47,25 +47,19 @@ describe('IdeaCard Card Component', () => {
     expect(idea.hasClass('favorited')).toEqual(true);
   });
 
-  // it('should be able to be favorited', () => {
-  //   const toggleFavoriteMock = jest.fn();
-  //   const idea = shallow(<IdeaCard
-  //       id={1}
-  //       title="Dogs should vote"
-  //       description="Give them rights"
-  //       toggleFavorite={toggleFavoriteMock}
-  //     />);
-  //
-  //   expect(idea).hasClass('favorited').toEqual(false);
-  //
-  //   idea.find('favorite-btn').simulate('click');
-  //
-  //   expect(idea).hasClass('favorited').toEqual(true);
-  //
-  //   idea.find('favorite-btn').simulate('click');
-  //
-  //   expect(idea).hasClass('favorited').toEqual(true);
-  // });
+   it('should be able to be favorited', () => {
+     const toggleFavoriteMock = jest.fn();
+     const idea = shallow(<IdeaCard
+         id={1}
+         title="Dogs should vote"
+         description="Give them rights"
+         toggleFavorite={toggleFavoriteMock}
+       />);
+  
+  
+     idea.find('.favorite-btn').simulate('click');
+     expect(toggleFavoriteMock).toHaveBeenCalledWith(1);
+   });
 
   it('should be able to be deleted', () => {
     const deleteCardMock = jest.fn();
