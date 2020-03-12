@@ -55,7 +55,8 @@ describe('App', () => {
         {
           id:2,
           title:'Better Idea',
-          description: 'Trust me, it\'s an even better idea'
+          description: 'Trust me, it\'s an even better idea',
+          isFavorite: true
         }
       ];
       mockIdeas.forEach(idea => {
@@ -64,7 +65,14 @@ describe('App', () => {
     });
 
     it('should modify a card\'s favorite status when toggleFavorite is called', () => {
-    
+      shallowApp.instance().toggleFavorite(1);
+      shallowApp.instance().toggleFavorite(2);
+
+      let favoriteOne = shallowApp.state('ideas').find(idea => idea.id === 1);
+      let favoriteTwo = shallowApp.state('ideas').find(idea => idea.id === 2);
+
+      expect(favoriteOne.isFavorite).toEqual(true);
+      expect(favoriteTwo.isFavorite).toEqual(false);
     }); 
 
     it('should remove a card from state when deleteCard is called', () => {

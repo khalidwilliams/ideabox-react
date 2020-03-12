@@ -39,6 +39,19 @@ class App extends Component {
     }
   }
 
+  toggleFavorite(id) {
+    const ideaToChange = this.state.ideas.find(idea => {
+      return idea.id === id
+    });
+
+    if (ideaToChange.isFavorite) {
+      ideaToChange.isFavorite = false;
+    } else {
+      ideaToChange.isFavorite = true;
+    }
+  }
+
+
   render() {
     <div className="App">
       <IdeaCard 
