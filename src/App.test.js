@@ -14,9 +14,6 @@ describe('App', () => {
     expect(shallowApp.state('ideas')).toEqual([]);
   });
 
-  it('should remove a card from state when deleteCard is called', () => {
-    
-  }); 
 
   describe('addCard fn', () => {
     let shallowApp;
@@ -45,7 +42,42 @@ describe('App', () => {
     });
   });
 
-  it('should modify a card\'s favorite status when toggleFavorite is called', () => {
-  
-  }); 
+  describe('state modification functions', () => {
+    let shallowApp, mockIdeas;
+    beforeEach(() => {
+      shallowApp = shallow(<App />);
+      mockIdeas = [
+        {
+          id:1,
+          title:'Good Idea',
+          description: 'Trust me, it\'s a good idea'
+        },
+        {
+          id:2,
+          title:'Better Idea',
+          description: 'Trust me, it\'s an even better idea'
+        }
+      ];
+      mockIdeas.forEach(idea => {
+        shallowApp.instance().addCard(idea);
+      });
+    });
+
+    it('should modify a card\'s favorite status when toggleFavorite is called', () => {
+    
+    }); 
+
+    it('should remove a card from state when deleteCard is called', () => {
+      shallowApp.instance().deleteCard(1);
+
+      expect(shallowApp.state('ideas')).not.toContainEqual(mockIdeas[0]);
+    }); 
+
+    it('should throw if the card does not have a matching id in state', () => {
+      expect(() => {
+        shallowApp.instance().deleteCard(3);
+      }).toThrow();
+
+    }); 
+  });
 });
