@@ -1,9 +1,27 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
+import { shallow } from 'enzyme';
 
-test.skip('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App', () => {
+  test('renders application', () => {
+    let shallowApp = shallow(<App />);
+    expect(shallowApp).toMatchSnapshot();
+  });
+
+  it('should have an empty state initially', () => {
+    
+  });
+
+  it('should remove a card from state when deleteCard is called', () => {
+  
+  }); 
+
+  it('should add a card to state when addCard is called', () => {
+  
+  }); 
+
+  it('should modify a card\'s favorite status when toggleFavorite is called', () => {
+  
+  }); 
 });

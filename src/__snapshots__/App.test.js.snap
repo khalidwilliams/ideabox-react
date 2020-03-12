@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders application 1`] = `
+<div
+  className="App"
+>
+  <IdeaCard
+    deleteCard={[Function]}
+    description="Give them rights"
+    id={1}
+    title="Dogs Should Vote"
+  />
+</div>
+`;
