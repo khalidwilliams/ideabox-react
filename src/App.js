@@ -10,6 +10,20 @@ class App extends Component {
       ideas: []
     }
   }
+
+  addCard(cardObject) {
+    const newCard = Object.assign({}, cardObject)
+    let ideaWithId = this.state.ideas.find(idea => {
+    return idea.id === newCard.id;
+    });
+    if (ideaWithId) {
+      throw new Error(`Idea with id ${newCard.id} already exists`);
+    } else {
+      let newState = this.state.ideas.concat([newCard]);
+      this.setState({ideas: newState});
+    }
+  }
+
   render() {
     <div className="App">
       <IdeaCard 
