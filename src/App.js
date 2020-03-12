@@ -24,6 +24,21 @@ class App extends Component {
     }
   }
 
+  deleteCard(idToDelete) {
+    const ideaToDelete = this.state.ideas.find((idea, index) => {
+      return idea.id === idToDelete;
+    });
+
+    if (!ideaToDelete) {
+      throw new Error(`No idea with id ${id} found`);
+    } else {
+      const remainingIdeas = this.state.ideas.filter(idea => {
+        return idea.id !== idToDelete;
+      }); 
+      this.setState({ideas: remainingIdeas});
+    }
+  }
+
   render() {
     <div className="App">
       <IdeaCard 
