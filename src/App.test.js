@@ -9,8 +9,9 @@ describe('App', () => {
     expect(shallowApp).toMatchSnapshot();
   });
 
-  it('should have an empty state initially', () => {
-    
+  it('should have no cards initially', () => {
+    let shallowApp = shallow(<App />);
+    expect(shallowApp.state('ideas')).toEqual([]);
   });
 
   it('should remove a card from state when deleteCard is called', () => {

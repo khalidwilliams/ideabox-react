@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import IdeaCard from './IdeaCard';
 
-function App() {
-  return (
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      ideas: []
+    }
+  }
+  render() {
     <div className="App">
       <IdeaCard 
         id={1}
@@ -13,7 +19,7 @@ function App() {
         deleteCard={(id) => {}}
       />
     </div>
-  );
+  };
 }
 
 export default App;
